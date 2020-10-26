@@ -1,0 +1,18 @@
+ALGORITHM sum_overlapping_elements
+VAR
+    set1, set2 : ARRAY_OF INTEGER[100];
+    sum : INTEGER := 0;
+    i, j : INTEGER;
+BEGIN
+    Read(set1);
+    Read(set2);
+    FOR i FROM 0 TO set1.length-1 STEP 1 DO
+        j := 0;
+        WHILE (j < set2.length) DO
+            IF (set2[j] = set1[i]) THEN
+                sum := sum + 2*set1[i]
+            END_IF
+            j := j+1;
+        END_WHILE
+    Write(sum);
+END
